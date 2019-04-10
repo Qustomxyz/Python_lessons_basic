@@ -10,7 +10,7 @@ import shutil
 def make_dir(dir_name):
     try:
         os.mkdir(dir_name)
-        print("Директория ", dir_name, " была создана")
+        print("\nДиректория ", dir_name, " была создана")
     except FileExistsError:
         print('Такая директория уже существует')
 
@@ -19,9 +19,9 @@ def del_dir(dir_name):
     try:
         if os.path.isdir(dir_name):
             os.rmdir(dir_name)
-            print("Директория ", dir_name, " была удалена")
-    except FileNotFoundError:
-        print('Такой директории не существует')
+            print("\nДиректория ", dir_name, " была удалена")
+        else:
+            print('\nТакой директории не существует')
     except PermissionError:
         print('Нет прав для удаления директории')
 
@@ -36,7 +36,7 @@ def show_dir(dir_name):
                 if os.path.isdir(item):
                     print(item)
     except FileNotFoundError:
-        print('Такой директории не существует')
+        print('\nТакой директории не существует')
 
 
 # Задача-3:
